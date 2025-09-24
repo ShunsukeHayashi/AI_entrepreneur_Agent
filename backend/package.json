@@ -2,10 +2,30 @@
   "name": "backend",
   "private": true,
   "version": "0.0.0",
-  "description": "Placeholder package for the backend workspace",
+  "description": "Express-based API service for the AI Entrepreneur Agent platform",
+  "type": "commonjs",
   "scripts": {
-    "dev": "echo \"Backend dev server pending Story S-002.\"",
-    "build": "echo \"Backend build pipeline pending Story S-002.\"",
-    "test": "echo \"Backend tests pending Story S-002.\""
+    "dev": "nodemon --watch src --ext ts --exec ts-node src/server.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/server.js",
+    "test": "jest",
+    "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\" --max-warnings=0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "@types/supertest": "^6.0.3",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5"
   }
 }
