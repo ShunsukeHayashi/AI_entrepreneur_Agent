@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Placeholder package for the backend workspace",
+  "scripts": {
+    "dev": "echo \"Backend dev server pending Story S-002.\"",
+    "build": "echo \"Backend build pipeline pending Story S-002.\"",
+    "test": "echo \"Backend tests pending Story S-002.\""
+  }
+}

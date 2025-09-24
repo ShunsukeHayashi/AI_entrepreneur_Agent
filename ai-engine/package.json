@@ -1,0 +1,10 @@
+{
+  "name": "ai-engine",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Placeholder package for coordinating AI engine tooling via npm scripts",
+  "scripts": {
+    "setup": "echo \"AI engine Python environment setup pending Story S-004.\"",
+    "test": "echo \"AI engine tests pending Story S-004.\""
+  }
+}

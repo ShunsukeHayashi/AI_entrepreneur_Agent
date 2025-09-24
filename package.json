@@ -1,8 +1,8 @@
 {
   "name": "ai-entrepreneur-agent",
-  "version": "0.1.0",
   "private": true,
-  "description": "Monorepo workspace for the AI Entrepreneur Agent platform.",
+  "version": "0.1.0",
+  "description": "Monorepo workspace for the AI Entrepreneur Agent project",
   "workspaces": [
     "frontend",
     "backend",
@@ -10,7 +10,15 @@
   ],
   "scripts": {
     "lint": "echo \"Root lint placeholder - delegate to service-specific configs once scaffolded.\"",
-    "test": "echo \"Root test placeholder - delegate to service-specific suites once scaffolded.\""
+    "test": "echo \"Root test placeholder - delegate to service-specific suites once scaffolded.\"",
+    "format": "prettier --write ."
   },
-  "devDependencies": {}
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "eslint": "^9.4.0",
+    "prettier": "^3.2.5"
+  }
 }

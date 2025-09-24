@@ -3,6 +3,7 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 package-lock.json
 
 # Python
@@ -14,25 +15,37 @@ __pycache__/
 .eggs/
 .env
 .venv/
+.env.local
+.env.*.local
 
 # Logs
-logs/
 *.log
 
 # Build artifacts
+coverage/
 dist/
 build/
-coverage/
+.tmp/
+.cache/
+.parcel-cache/
+.next/
 
 # IDE and editor
 .vscode/
 .idea/
 .DS_Store
+Thumbs.db
+*.swp
+*.swo
 
 # Python tooling
 .mypy_cache/
 .pytest_cache/
 
-# Misc
-*.swp
-*.swo
+# Tooling
+.gocache/
+.gomodcache/
+
+# Docker
+*.pid
+*.seed

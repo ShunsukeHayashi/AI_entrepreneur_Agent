@@ -1,0 +1,11 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Placeholder package for the frontend workspace",
+  "scripts": {
+    "dev": "echo \"Frontend dev server pending Story S-003.\"",
+    "build": "echo \"Frontend build pipeline pending Story S-003.\"",
+    "test": "echo \"Frontend tests pending Story S-003.\""
+  }
+}

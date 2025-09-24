@@ -1,20 +1,21 @@
-# Infrastructure Layer
-
-The infrastructure layer will house infrastructure-as-code assets and operational runbooks for the AI Entrepreneur Agent platform.
+# Infrastructure
 
 ## Responsibilities
-- Capture Terraform modules, Kubernetes manifests, and deployment automations for all services.
-- Define observability baselines, including logging, metrics, and alerting pipelines.
-- Document environment topology spanning development, staging, and production.
+- Define infrastructure-as-code assets for container orchestration, networking, and data services across environments.
+- Provide reproducible deployment pipelines targeting AWS (EC2, RDS, S3) with Kubernetes as the primary runtime.
 
-## Planned Tooling
-- Terraform for cloud resource provisioning (final provider modules pending selection).
-- Kubernetes manifests and Helm charts to orchestrate containerized services on AWS.
-- GitHub Actions workflows and container registries to support CI/CD pipelines.
+## Planned Scaffolding
+- Future infrastructure epics will introduce Terraform modules, Kubernetes manifests, and GitHub Actions workflows.
+- Story S-005 will connect CI jobs and container images as scaffolding for subsequent deployment automation.
+
+## Tooling Roadmap
+- Terraform (version TBD) for cloud provisioning with Terragrunt or native modules under evaluation.
+- Helm charts and Kustomize overlays anticipated for per-environment Kubernetes configuration.
+- Container image publication via GitHub Actions and AWS ECR (details pending).
 
 ## Next Steps
-- Outline environment bootstrap procedures and IaC conventions once Story S-005 commences.
-- Coordinate with security stakeholders to record compliance and secret-management requirements.
-- Track open decisions around infrastructure tooling in this README via TODO notes.
+- Outline Terraform module layout and environment promotion strategy in upcoming stories.
+- Document secrets management and observability stacks as architecture decisions land.
 
-> **TODO**: Confirm Terraform vs. Pulumi decision and align with platform engineering stakeholders.
+## Open Questions
+- Secrets management approach (AWS Secrets Manager vs. HashiCorp Vault) and multi-region rollout strategy require cross-team decisions.

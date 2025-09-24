@@ -33,3 +33,9 @@
 - npm workspace におけるパッケージ管理方式（pnpm/yarn 切替）は将来のチーム決定待ち。暫定で npm を採用。
 - ESLint/Prettier のルール詳細は S-002/S-003 実装時に見直しが必要。
 - インフラ層の IaC ツール（Terraform, Pulumi 等）は未定であり、placeholder コメントで意思決定待ちであることを明記する。
+
+## 実施結果
+- `README.md` に `logs/` ディレクトリを含む最新リポジトリ構成とセットアップ手順（`npm install`、LDDログ確認手順）を追記。
+- `CONTRIBUTING.md` に LDD ログ保管先として `logs/` を明示。
+- `logs/` ディレクトリを新設し、`README.md`・`codex_prompt_chain.md`・`tool_invocations.md`・`handoff_summary.md` を配置して LDD 運用テンプレートを整備。
+- `.gitignore` から `logs/` を除外し、ログをバージョン管理に含められるよう調整。

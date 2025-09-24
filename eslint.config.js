@@ -1,11 +1,22 @@
+import js from "@eslint/js";
+
 /**
  * Base ESLint flat config shared across workspaces.
  * Extend or override this configuration within service directories as implementations mature.
  */
 export default [
   {
-    ignores: ["node_modules/", "dist/", "build/", "coverage/", "**/generated/**"],
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/.next/**",
+      "**/coverage/**",
+      "**/generated/**",
+      "ai-engine/**",
+    ],
   },
+  js.configs.recommended,
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
