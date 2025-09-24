@@ -28,15 +28,27 @@ Refer to `docs/architecture.md` for a deeper discussion of service boundaries an
 
 ### Setup Steps
 1. Clone the repository and create a feature branch following the `devin/{timestamp}-{feature-name}` convention.
-2. Install dependencies for each service layer (commands will be added as codebases are scaffolded).
+2. Run `npm install` at the repository root once service packages are introduced; additional workspace-specific steps will be documented in each service README.
 3. Populate environment variables for local development (`.env` templates will be introduced alongside implementation work).
-4. Run unit and integration tests relevant to your changes before opening a pull request.
+4. Review `CONTRIBUTING.md` for evolving workflows, then run unit and integration tests relevant to your changes before opening a pull request.
+
+### Shared Tooling
+- `.editorconfig` standardizes whitespace, encoding, and newline behaviors across editors.
+- `.prettierrc.json` and `eslint.config.js` define baseline formatting and linting rules to be extended per workspace.
+- `package.json` configures npm workspaces (`frontend`, `backend`, `ai-engine`) and exposes placeholder `lint`/`test` scripts until service scaffolds land.
+- `.gitignore` excludes common Node.js, Python, build artifact, and IDE files from version control.
 
 ## Repository Layout
 ```
 AI_entrepreneur_Agent/
+├── .editorconfig          # Shared editor configuration
+├── .gitignore             # Common ignore rules across toolchains
+├── .prettierrc.json       # Shared Prettier formatting rules
 ├── AGENTS.md              # Operational playbook for Codex and companion agents
+├── CONTRIBUTING.md        # Developer onboarding and workflow guidance
 ├── README.md              # Project overview (this file)
+├── ai-engine/             # Python-based AI engine services (Story S-004)
+├── backend/               # Node.js/Express API service (Story S-002)
 ├── docs/                  # Architecture, workflow, and integration references
 │   ├── architecture.md
 │   ├── codex/
@@ -44,6 +56,10 @@ AI_entrepreneur_Agent/
 │   ├── integration_mapping.md
 │   └── ldd/
 │       └── workflow.md
+├── eslint.config.js       # Base ESLint flat config for the monorepo
+├── frontend/              # React SPA codebase (Story S-003)
+├── infrastructure/        # Infrastructure-as-code assets (Story S-005)
+├── package.json           # npm workspace configuration and placeholder scripts
 └── .ai/                   # Product and architecture approvals shared across the toolchain
     ├── README.md
     ├── arch.md
