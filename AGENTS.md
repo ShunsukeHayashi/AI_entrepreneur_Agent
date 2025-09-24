@@ -43,6 +43,16 @@ AGENTS.md: Codexエージェント運用マニュアル
 - `read_file`: ファイルの内容を読み込むため。
 - `write_file`: ファイルに内容を書き込むため。
 - `apply_patch`: ファイルにdiff/patchを適用するため。
+- `mcp`: GitHub MCP サーバー経由で外部リポジトリと連携するため。
+
+### MCPツール設定・使用ガイド
+
+1. `docs/codex/github_mcp_config.example.json` を参考に、`~/.config/codex-cli/mcp.json`（存在しない場合はディレクトリごと作成）へ設定ファイルを配置します。
+2. `token` に GitHub Personal Access Token（`repo` 権限を含む）を設定し、`owner` と `repo` を対象リポジトリに合わせて更新します。
+3. Codex CLI を再起動し、`codex tools list` で `github_mcp` が登録されていることを確認します。
+4. 利用時は `mcp` ツールを選択し、例として `mcp github_mcp read_file --path docs/architecture.md` の形式でリモートファイルを取得します。
+5. エラーが発生した場合は `docs/codex/github_mcp_server.md` のトラブルシューティングを参照し、必要に応じて設定値を再確認してください。
+6. Pull Request 作成時は `mcp github_mcp create_pull_request --title "feat: ..." --body-file path/to/body.md --base main --head devin/...` を実行し、結果のURLを最終応答に記載します。
 
 ## コア原則
 

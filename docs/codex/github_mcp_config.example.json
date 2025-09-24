@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "servers": [
+    {
+      "id": "github",
+      "description": "GitHub MCP server exposed to Codex for repository automation",
+      "command": "npx",
+      "args": [
+        "--yes",
+        "github-mcp-server",
+        "--stdio"
+      ],
+      "env": {
+        "GITHUB_TOKEN": "ghp_your_github_personal_access_token"
+      },
+      "cwd": "/Users/you/tools/github-mcp-server"
+    }
+  ]
+}
