@@ -7,6 +7,7 @@ This guide explains how Codex should plug into the AI_entrepreneur_Agent workflo
 - Access to the repository with workspace write permissions.
 - Ability to request sandbox escalation when needed (approval policy: on-request).
 - Familiarity with the LDD workflow outlined in `docs/ldd/workflow.md`.
+- (Optional) For GitHub automation, follow `docs/codex/github_mcp_server.md` to enable the MCP tool.
 
 ## Daily Flow
 
@@ -27,4 +28,3 @@ This guide explains how Codex should plug into the AI_entrepreneur_Agent workflo
 - **Sandbox errors**: Log the failure, request escalation with justification, and retry.
 - **Dependency gaps**: Propose installation commands referencing `requirements.txt`.
 - **Merge conflicts**: Summarize conflicting sections and wait for user guidance before resolving.
-

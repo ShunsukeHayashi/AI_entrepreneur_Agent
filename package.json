@@ -1,0 +1,16 @@
+{
+  "name": "ai-entrepreneur-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo workspace for the AI Entrepreneur Agent platform.",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "ai-engine"
+  ],
+  "scripts": {
+    "lint": "echo \"Root lint placeholder - delegate to service-specific configs once scaffolded.\"",
+    "test": "echo \"Root test placeholder - delegate to service-specific suites once scaffolded.\""
+  },
+  "devDependencies": {}
+}

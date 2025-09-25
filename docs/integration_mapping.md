@@ -10,6 +10,7 @@ This document aligns project components with external integrations and automatio
 | Codex | Coding agent | Implements stories, maintains logs, prepares handoffs.
 | Cursor | IDE reviewer | Validates code, suggests refactors, runs manual tests.
 | Roo | Lint/Rule checker | Ensures compliance with repo-specific conventions.
+| GitHub MCP Server | Context provider | Bridges GitHub repositories into Codex via MCP tools. |
 | GitHub Actions | CI pipeline | Executes automated tests and linting on PRs. |
 
 ## Service Integrations
@@ -24,4 +25,3 @@ This document aligns project components with external integrations and automatio
 - `.ai/` directory captures PRD-approved state and must remain the source of truth for in-progress items.
 - `logs/` directory stores LDD transcripts for cross-agent visibility.
 - `docs/` folder centralizes architectural references for onboarding new agents.
-
