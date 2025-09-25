@@ -28,27 +28,30 @@ Refer to `docs/architecture.md` for a deeper discussion of service boundaries an
 
 ### Setup Steps
 1. Clone the repository and create a feature branch following the `devin/{timestamp}-{feature-name}` convention.
-2. Run `npm install` at the repository root once service packages are introduced; additional workspace-specific steps will be documented in each service README.
+2. Install shared tooling dependencies from the repo root.
+   ```bash
+   npm install
+   ```
 3. Populate environment variables for local development (`.env` templates will be introduced alongside implementation work).
-4. Review `CONTRIBUTING.md` for evolving workflows, then run unit and integration tests relevant to your changes before opening a pull request.
-
-### Shared Tooling
-- `.editorconfig` standardizes whitespace, encoding, and newline behaviors across editors.
-- `.prettierrc.json` and `eslint.config.js` define baseline formatting and linting rules to be extended per workspace.
-- `package.json` configures npm workspaces (`frontend`, `backend`, `ai-engine`) and exposes placeholder `lint`/`test` scripts until service scaffolds land.
-- `.gitignore` excludes common Node.js, Python, build artifact, and IDE files from version control.
+4. Run unit and integration tests relevant to your changes before opening a pull request (placeholder scripts are provided until runtime code lands).
+5. Review `logs/` entries (prompt chains, tool invocations, handoff summaries) to understand in-flight work before picking up a new story.
+6. Consult `CONTRIBUTING.md` for evolving workflows and tooling guidelines.
 
 ## Repository Layout
 ```
 AI_entrepreneur_Agent/
-├── .editorconfig          # Shared editor configuration
-├── .gitignore             # Common ignore rules across toolchains
-├── .prettierrc.json       # Shared Prettier formatting rules
+├── .ai/                   # Product and architecture approvals shared across the toolchain
+│   ├── README.md
+│   ├── arch.md
+│   └── prd.md
+├── .editorconfig          # Repository-wide formatting defaults
+├── .gitignore             # Ignore rules for Node/Python/tooling artifacts
+├── .prettierrc.json       # Prettier formatting preferences
 ├── AGENTS.md              # Operational playbook for Codex and companion agents
-├── CONTRIBUTING.md        # Developer onboarding and workflow guidance
+├── CONTRIBUTING.md        # Onboarding and workflow guide for collaborators
 ├── README.md              # Project overview (this file)
-├── ai-engine/             # Python-based AI engine services (Story S-004)
-├── backend/               # Node.js/Express API service (Story S-002)
+├── ai-engine/             # Python AI service (Story S-004 will populate sources/tests)
+├── backend/               # Node.js API service (Story S-002 will bootstrap Express runtime)
 ├── docs/                  # Architecture, workflow, and integration references
 │   ├── architecture.md
 │   ├── codex/
@@ -56,15 +59,18 @@ AI_entrepreneur_Agent/
 │   ├── integration_mapping.md
 │   └── ldd/
 │       └── workflow.md
-├── eslint.config.js       # Base ESLint flat config for the monorepo
-├── frontend/              # React SPA codebase (Story S-003)
-├── infrastructure/        # Infrastructure-as-code assets (Story S-005)
-├── package.json           # npm workspace configuration and placeholder scripts
-└── .ai/                   # Product and architecture approvals shared across the toolchain
-    ├── README.md
-    ├── arch.md
-    └── prd.md
+├── frontend/              # React application (Story S-003 will scaffold SPA entry point)
+├── infrastructure/        # Infrastructure-as-code assets (future epics add Terraform/Kubernetes)
+├── logs/                  # LDD prompt chain, tool invocation, and handoff artifacts
+├── eslint.config.js       # Shared ESLint flat config (extend inside service packages)
+└── package.json           # npm workspace definition and shared scripts
 ```
+
+## Workspace Tooling
+- `.editorconfig` standardizes indentation, line endings, and trailing whitespace across languages.
+- `.gitignore` omits Node, Python, and IDE artifacts while allowing `logs/` to be tracked.
+- `package.json` configures npm workspaces for `frontend`, `backend`, and `ai-engine`, and exposes placeholder `lint`, `test`, and `format` scripts until runtime scaffolds are delivered.
+- `eslint.config.js` and `.prettierrc.json` define baseline linting/formatting defaults that service-level packages will extend in subsequent stories.
 
 ## Development Workflow
 This project follows Log-Driven Development (LDD). Each change should capture:

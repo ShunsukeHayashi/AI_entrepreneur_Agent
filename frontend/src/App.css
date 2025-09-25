@@ -1,0 +1,156 @@
+.app {
+  padding: 2.5rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+.app__header {
+  text-align: center;
+}
+
+.app__title {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.app__subtitle {
+  margin: 0.5rem 0 0;
+  color: #52606d;
+}
+
+.app__main {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
+  padding: 2rem;
+  max-width: 32rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card__label {
+  font-size: 0.875rem;
+  color: #52606d;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.card__value {
+  display: block;
+  margin-top: 0.25rem;
+  font-family: "Dank Mono", "Fira Code", "SFMono-Regular", Menlo, monospace;
+  color: #1f2933;
+  word-break: break-all;
+}
+
+.card__refresh {
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.card__refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.card__refresh:not(:disabled):hover,
+.card__refresh:not(:disabled):focus-visible {
+  background: #2563eb;
+}
+
+.card__status {
+  display: flex;
+  justify-content: center;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pill--loading {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.pill--success {
+  background: #def7ec;
+  color: #047857;
+}
+
+.pill--error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.card__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.card__list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card__error {
+  background: #fef2f2;
+  border-left: 4px solid #f87171;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  color: #b91c1c;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.card__error code {
+  font-family: "Dank Mono", "Fira Code", "SFMono-Regular", Menlo, monospace;
+  background: rgba(249, 115, 22, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  color: #9a3412;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card__list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

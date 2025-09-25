@@ -1,16 +1,36 @@
 {
   "name": "ai-entrepreneur-agent",
-  "version": "0.1.0",
   "private": true,
-  "description": "Monorepo workspace for the AI Entrepreneur Agent platform.",
+  "version": "0.1.0",
+  "description": "Monorepo workspace for the AI Entrepreneur Agent project",
   "workspaces": [
     "frontend",
     "backend",
     "ai-engine"
   ],
   "scripts": {
-    "lint": "echo \"Root lint placeholder - delegate to service-specific configs once scaffolded.\"",
-    "test": "echo \"Root test placeholder - delegate to service-specific suites once scaffolded.\""
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "format": "prettier --write .",
+    "backend:dev": "npm run dev --workspace backend",
+    "backend:build": "npm run build --workspace backend",
+    "backend:test": "npm run test --workspace backend",
+    "backend:lint": "npm run lint --workspace backend",
+    "frontend:dev": "npm run dev --workspace frontend",
+    "frontend:build": "npm run build --workspace frontend",
+    "frontend:preview": "npm run preview --workspace frontend",
+    "frontend:test": "npm run test --workspace frontend",
+    "frontend:lint": "npm run lint --workspace frontend"
   },
-  "devDependencies": {}
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "eslint": "^9.4.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "prettier": "^3.2.5",
+    "typescript-eslint": "^7.17.0"
+  }
 }

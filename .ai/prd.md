@@ -2,7 +2,7 @@
 
 - **Status**: Approved
 - **Current Epic**: E-001 Platform Foundation
-- **Next Actions**: Execute Story S-001 plan and prepare handoffs for subsequent scaffolding stories.
+- **Next Actions**: Transition to Story S-002 backend scaffolding after reviewing S-001 deliverables.
 
 ## Epic E-001: Platform Foundation
 
@@ -24,7 +24,7 @@
 
 ### Story S-002: Scaffold Backend API Service
 
-- **Status**: Proposed
+- **Status**: Completed
 - **Description**: Initialize an Express-based Node.js service with baseline routing, environment configuration, and test harness.
 - **Acceptance Criteria**:
   - `backend` contains a bootstrapped Express server with health check endpoint and Jest (or equivalent) test setup.
@@ -34,7 +34,7 @@
 
 ### Story S-003: Scaffold Frontend React Application
 
-- **Status**: Proposed
+- **Status**: Completed
 - **Description**: Bootstrap a React SPA with TypeScript, routing, and component testing utilities.
 - **Acceptance Criteria**:
   - `frontend` contains a Create React App (or Vite)-based scaffold with TypeScript support.
